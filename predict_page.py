@@ -14,5 +14,34 @@ Le_Education = Data["Le_Education"]
 
 def show_predict_page():
     st.title("Software Developer Salary Prediction")
-    st.write("""We need some information to predict the salary""")
- 
+    
+    st.write("""### We need some information to predict the salary""")
+    
+    Countries = (
+    "United States of America",
+            "Germany",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Canada",
+            "India",
+            "France",
+            "Netherlands",
+            "Australia",
+            "Brazil",
+            "Spain",
+            "Sweden",
+            "Italy",
+            "Poland",
+            "Switzerland",
+            "Denmark",
+            "Norway",
+            "Israel"
+        )
+    Edications = (
+            'Bachelor’s degree',
+            'Less than a Bachelors',
+            'Master’s degree',
+            'Post grad'
+        )
+    Country = st.selectbox("Country", Countries)
+    Education = st.selectbox("Education Level", Edications)
+    Experience = st.slider("Years Of Experience",0,50,1)
