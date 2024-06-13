@@ -1,0 +1,7 @@
+#I have to ignore these files
+Data/
+.env
+.venv
+env/
+venv/
+.Data/
