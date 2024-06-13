@@ -54,3 +54,4 @@ def show_predict_page():
         
         Salary = gressor_Loaded.predict(X)
         st.subheader(f"The Estimated Value is Tsh{Salary[0]:.2f}")
+        
