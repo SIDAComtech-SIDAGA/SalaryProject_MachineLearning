@@ -34,14 +34,23 @@ def show_predict_page():
             "Switzerland",
             "Denmark",
             "Norway",
-            "Israel"
+            "Israel",
         )
     Edications = (
             'Bachelor’s degree',
             'Less than a Bachelors',
             'Master’s degree',
-            'Post grad'
+            'Post grad',
         )
     Country = st.selectbox("Country", Countries)
     Education = st.selectbox("Education Level", Edications)
     Experience = st.slider("Years Of Experience",0,50,1)
+    ok = st.button("Calculate Salary")
+    if ok:
+        X = np.array([[Country, Education, Experience]])
+        X[:,0] = Le_Country.transform(X[:,0])
+        X[:,1] = Le_Education.transform(X[:,1])
+        X = X.astype(float)
+        
+        Salary = gressor_Loaded.predict(X)
+        st.subheader(f"The Estimated Value is Tsh{Salary[0]:.2f}")
